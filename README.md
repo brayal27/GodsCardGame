@@ -1,3 +1,5 @@
+El juego esta en una fase muy temprana aún de desarrollo
+
 # Gods Card Game
 
 Proyecto de Trabajo Final de Grado orientado al desarrollo de un videojuego de estrategia por turnos basado en cartas y posicionamiento táctico sobre tablero.
