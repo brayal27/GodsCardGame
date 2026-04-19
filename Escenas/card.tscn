@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c1nk5quk2dkbl"]
+
+[ext_resource type="Texture2D" uid="uid://jbwtu3x5sp0p" path="res://epic-fantasy-trading-card-illustration.png" id="1_kikvd"]
+[ext_resource type="Script" uid="uid://cdbj2rulojunk" path="res://card.gd" id="1_rjlel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]
+size = Vector2(206, 261)
+
+[node name="Card" type="Node2D" unique_id=904422991]
+script = ExtResource("1_rjlel")
+
+[node name="CardImage" type="Sprite2D" parent="." unique_id=603866680]
+position = Vector2(-9.1552734e-05, -1.5258789e-05)
+scale = Vector2(0.35615253, 0.3561526)
+texture = ExtResource("1_kikvd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1108896973]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1964227386]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rjlel")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
