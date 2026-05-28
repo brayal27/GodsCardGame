@@ -1,5 +1,3 @@
-El juego esta en una fase muy temprana aún de desarrollo
-
 # Gods Card Game
 
 Proyecto de Trabajo Final de Grado orientado al desarrollo de un videojuego de estrategia por turnos basado en cartas y posicionamiento táctico sobre tablero.
@@ -78,6 +76,10 @@ Versión PEC 2 / Prototipo inicial:
 2. Abrir Godot Engine 4.x.
 3. Importar la carpeta del proyecto.
 4. Ejecutar la escena principal.
+
+## Actualización día 14/05
+
+A nivel de código, se han añadido nuevos scripts como BattleManager.gd, Deck.gd, OpponentDeck.gd, EnemyHand.gd, EnemyCard.gd, input_manager.gd, Characters.gd, Main.gd y MainMenu.gd. Además, se han ampliado los scripts existentes card.gd, card_slot.gd, CardManager.gd y player_hand.gd para soportar estados de carta, propiedad del slot, posicionamiento en tablero, raycasts, animaciones y lógica de combate
 
 ## Estructura del repositorio
 
