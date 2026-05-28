@@ -1,22 +1,485 @@
 [gd_scene format=3 uid="uid://dgkx6kyl5jvkm"]
 
-[ext_resource type="Script" uid="uid://ds4kctfaj4run" path="res://CardManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://ds4kctfaj4run" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://buopnm2fg845a" path="res://Scripts/Main.gd" id="1_y8e5y"]
+[ext_resource type="Texture2D" uid="uid://bsuhum7u8rgq5" path="res://Assets/Tapete.jpg" id="2_ktoa8"]
 [ext_resource type="PackedScene" uid="uid://jxpw5apoafi1" path="res://Escenas/card_slot.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://dso16idejcgxq" path="res://card_slot.gd" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://7ed4wfi4ij1n" path="res://player_hand.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://dso16idejcgxq" path="res://Scripts/card_slot.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://7ed4wfi4ij1n" path="res://Scripts/player_hand.gd" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://fuipmqpq2k34" path="res://Assets/Faccion nordica.jpg" id="5_ktoa8"]
+[ext_resource type="Script" uid="uid://d32nryl4lrb8b" path="res://Scripts/Deck.gd" id="5_s2ilj"]
+[ext_resource type="Script" uid="uid://ca4iw2x0fiap8" path="res://Scripts/EnemyHand.gd" id="7_b1m0k"]
+[ext_resource type="Script" uid="uid://bg4h5me5gwtih" path="res://Scripts/input_manager.gd" id="7_ktoa8"]
+[ext_resource type="Script" uid="uid://5pybevr2vpd" path="res://Scripts/BattleManager.gd" id="9_n3qho"]
+[ext_resource type="Texture2D" uid="uid://d2fjg26pybw5u" path="res://Assets/Faccion_Griega.jpg" id="10_l8mww"]
+[ext_resource type="StyleBox" uid="uid://4vfihefwum68" path="res://MainMenuButtonsNormal.tres" id="11_le4xx"]
+[ext_resource type="Script" uid="uid://b712s5j42qmyu" path="res://Scripts/OpponentDeck.gd" id="11_nyv6x"]
+[ext_resource type="StyleBox" uid="uid://cfamou7q5tcjv" path="res://MainMenuButtonsPressed.tres" id="12_ipmsd"]
+[ext_resource type="StyleBox" uid="uid://dwwdij1yp4sb3" path="res://MainMenuButtonsHover.tres" id="13_a165e"]
+[ext_resource type="StyleBox" uid="uid://bsyqy7lnf35c7" path="res://new_style_box_flat.tres" id="17_xgh3l"]
+[ext_resource type="FontFile" uid="uid://ch4f7f1i6o3yc" path="res://Fonts/Cinzel/static/Cinzel-Bold.ttf" id="18_eyox0"]
+[ext_resource type="FontFile" uid="uid://bueqwfi5yclcp" path="res://Fonts/Cinzel/static/Cinzel-SemiBold.ttf" id="19_8qua0"]
+[ext_resource type="StyleBox" uid="uid://d3n5vr4e26t41" path="res://MainMenuButtons.tres" id="20_le4xx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1md0r"]
+size = Vector2(141, 198)
 
 [node name="main" type="Node2D" unique_id=1998233136]
+script = ExtResource("1_y8e5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=544240448]
+z_index = -6
+position = Vector2(960.2501, 540)
+scale = Vector2(0.34874633, 0.35156253)
+texture = ExtResource("2_ktoa8")
+
+[node name="InputManager" type="Node2D" parent="." unique_id=1336455539]
+script = ExtResource("7_ktoa8")
+
+[node name="Card_slots" type="Node2D" parent="." unique_id=343928850]
+
+[node name="CardSlot00" parent="Card_slots" unique_id=329634630 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(685, 235)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot01" parent="Card_slots" unique_id=676134399 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(686, 437)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot02" parent="Card_slots" unique_id=1815994957 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(687, 638)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot03" parent="Card_slots" unique_id=1797584839 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(687, 840)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot10" parent="Card_slots" unique_id=1589686165 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(866, 234)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot11" parent="Card_slots" unique_id=326230870 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(867, 436)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot12" parent="Card_slots" unique_id=243815457 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(868, 637)
+scale = Vector2(0.62499994, 0.62499994)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot13" parent="Card_slots" unique_id=995759596 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(868, 839)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot20" parent="Card_slots" unique_id=1582095339 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1065, 233)
+scale = Vector2(0.62499994, 0.62499994)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot21" parent="Card_slots" unique_id=721654306 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1066, 435)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot22" parent="Card_slots" unique_id=1796354018 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1067, 636)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot23" parent="Card_slots" unique_id=749376710 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1067, 838)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot30" parent="Card_slots" unique_id=1900078305 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1243, 233)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot31" parent="Card_slots" unique_id=686021434 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1244, 435)
+scale = Vector2(0.62499994, 0.62499994)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot32" parent="Card_slots" unique_id=1003050665 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1245, 636)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
+
+[node name="CardSlot33" parent="Card_slots" unique_id=398264139 instance=ExtResource("3_h2yge")]
+z_index = -4
+position = Vector2(1245, 838)
+scale = Vector2(0.625, 0.625)
+script = ExtResource("4_1bvp3")
 
 [node name="CardManager" type="Node2D" parent="." unique_id=816509288]
 script = ExtResource("1_0xm2m")
 
-[node name="CardSlot" parent="." unique_id=329634630 instance=ExtResource("3_h2yge")]
-position = Vector2(316, 183)
-script = ExtResource("4_1bvp3")
-
-[node name="CardSlot2" parent="." unique_id=331473481 instance=ExtResource("3_h2yge")]
-position = Vector2(744, 191)
-script = ExtResource("4_1bvp3")
-
 [node name="PlayerHand" type="Node2D" parent="." unique_id=1666294451]
 script = ExtResource("4_lquwl")
+
+[node name="EnemyHand" type="Node2D" parent="." unique_id=1010727568]
+script = ExtResource("7_b1m0k")
+
+[node name="Deck" type="Node2D" parent="." unique_id=1830307718]
+position = Vector2(136, 944)
+script = ExtResource("5_s2ilj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck" unique_id=2055178045]
+z_index = -2
+position = Vector2(-1, 0)
+scale = Vector2(0.15551272, 0.1570327)
+texture = ExtResource("5_ktoa8")
+
+[node name="Area2D" type="Area2D" parent="Deck" unique_id=825569469]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D" unique_id=1210662493]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_1md0r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Deck" unique_id=1585061951]
+z_index = -2
+offset_left = -8.000004
+offset_top = -84.00002
+offset_right = 2.4999962
+offset_bottom = -58.500023
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="FinTurno" type="Button" parent="." unique_id=96354220]
+offset_left = 27.0
+offset_top = 533.0
+offset_right = 122.0
+offset_bottom = 564.0
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "FIN TURNO"
+
+[node name="BattleManager" type="Node" parent="." unique_id=287491874]
+script = ExtResource("9_n3qho")
+
+[node name="OpponentDeck" type="Node2D" parent="." unique_id=165704710]
+position = Vector2(1794, 151)
+script = ExtResource("11_nyv6x")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="OpponentDeck" unique_id=491466972]
+z_index = -2
+offset_left = -3.57
+offset_top = 57.0
+offset_right = 6.9300003
+offset_bottom = 81.485
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Deck" type="Node2D" parent="OpponentDeck" unique_id=1713023801]
+position = Vector2(-5.38826e-05, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck/Deck" unique_id=460113111]
+z_index = -3
+scale = Vector2(0.15551272, 0.1570327)
+texture = ExtResource("10_l8mww")
+
+[node name="BattleTimer" type="Timer" parent="." unique_id=321798717]
+
+[node name="FaceUp" type="Button" parent="." unique_id=283632675]
+offset_left = 1737.0
+offset_top = 931.0
+offset_right = 1883.0
+offset_bottom = 974.0
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "BOCA ARRIBA"
+
+[node name="FaceDown" type="Button" parent="." unique_id=100103573]
+offset_left = 1737.0
+offset_top = 984.0
+offset_right = 1883.0
+offset_bottom = 1027.0
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "BOCA ABAJO"
+
+[node name="Options" type="Panel" parent="." unique_id=1385860975]
+visible = false
+offset_left = 617.0
+offset_top = 138.0
+offset_right = 1317.0
+offset_bottom = 938.0
+theme_override_styles/panel = ExtResource("17_xgh3l")
+
+[node name="Tittle" type="Label" parent="Options" unique_id=1283882045]
+layout_mode = 0
+offset_left = 208.805
+offset_top = 219.0
+offset_right = 482.805
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("18_eyox0")
+theme_override_font_sizes/font_size = 36
+text = "OPCIONES"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=231619260]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 330.0
+offset_right = 485.0
+offset_bottom = 578.0
+theme_override_constants/separation = 19
+
+[node name="Play" type="Button" parent="Options/VBoxContainer" unique_id=677924048]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "Volver"
+
+[node name="HowToPlay" type="Button" parent="Options/VBoxContainer" unique_id=1164634054]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "¿Cómo se juega?"
+
+[node name="Menu" type="Button" parent="Options/VBoxContainer" unique_id=909995939]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "Volver al menú"
+
+[node name="ExitGame" type="Button" parent="Options/VBoxContainer" unique_id=826183271]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("12_ipmsd")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "Salir al escritorio"
+
+[node name="HowToPlayPanel" type="Panel" parent="." unique_id=1127955015]
+visible = false
+offset_left = 321.0
+offset_top = 145.0
+offset_right = 1611.0
+offset_bottom = 943.0
+theme_override_styles/panel = ExtResource("17_xgh3l")
+
+[node name="Tittle" type="Label" parent="HowToPlayPanel" unique_id=1100803511]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 30.0
+offset_right = 795.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("18_eyox0")
+theme_override_font_sizes/font_size = 36
+text = "¿CÓMO SE JUEGA?"
+
+[node name="HowToPlayText" type="RichTextLabel" parent="HowToPlayPanel" unique_id=203745308]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 103.0
+offset_right = 1170.0
+offset_bottom = 721.0
+bbcode_enabled = true
+text = "[b][font_size=20]Objetivo[/font_size][/b]
+
+Este es un juego de estrategia por turnos donde los jugadores colocan cartas en el mapa para preparar ataques, trampas y duelos.
+
+El objetivo es derrotar [b]7 cartas del rival[/b]. El primer jugador que lo consiga gana la partida.
+
+[b][font_size=20]Inicio de la partida[/font_size][/b]
+
+Al empezar, se realiza un sorteo para decidir qué jugador comienza.
+
+Después, cada jugador roba cartas hasta tener [b]4 cartas en la mano[/b].
+
+
+[b][font_size=20]Primeros turnos[/font_size][/b]
+
+Hasta el [b]cuarto turno[/b], no se pueden iniciar combates.
+
+Durante esta fase, los jugadores solo pueden colocar cartas en slots libres del mapa. Las cartas pueden jugarse boca arriba o boca abajo.
+
+
+[b][font_size=20]Turnos de juego[/font_size][/b]
+
+A partir del cuarto turno empiezan las hostilidades.
+
+En su turno, cada jugador puede realizar una acción principal:
+
+[b]Colocar una carta[/b] en un slot libre del mapa.
+
+[b]Revelar una carta boca abajo[/b] que ya esté colocada.
+
+Si una carta revelada está cerca de una carta rival, se inicia un duelo.
+
+
+[b][font_size=20]Cartas boca abajo[/font_size][/b]
+
+Las cartas boca abajo permanecen ocultas para el rival.
+
+Sirven para preparar estrategias, esconder habilidades y sorprender al enemigo cuando empieza un duelo.
+
+
+[b][font_size=20]Duelos[/font_size][/b]
+
+Un duelo ocurre cuando una carta se enfrenta a una carta rival cercana.
+
+Al comenzar el duelo, las cartas implicadas se revelan si estaban boca abajo. Después se comparan sus valores de combate y se aplican sus habilidades.
+
+
+[b][font_size=20]Habilidades[/font_size][/b]
+
+Algunas cartas tienen habilidades especiales, como:
+
+[b]Blindaje[/b]: reduce daño.  
+[b]Veneno[/b]: debilita al rival.  
+[b]Apoyo[/b]: ayuda a cartas aliadas cercanas.  
+[b]Agilidad[/b]: da ventaja en combate.  
+[b]Prisa[/b]: permite actuar antes.  
+[b]Frenesí[/b]: aumenta el poder ofensivo.
+
+
+[b][font_size=20]Ganar un duelo[/font_size][/b]
+
+Para resolver un duelo, se revelan las cartas, se calculan sus valores, se aplican habilidades y se compara el resultado.
+
+La carta perdedora es derrotada y se retira del tablero.
+
+
+[b][font_size=20]Victoria[/font_size][/b]
+
+Gana el primer jugador que consiga derrotar [b]7 cartas enemigas[/b]."
+
+[node name="BackButton" type="Button" parent="HowToPlayPanel" unique_id=1848837978]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 739.0
+offset_right = 696.0
+offset_bottom = 792.0
+theme_override_fonts/font = ExtResource("19_8qua0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("11_le4xx")
+theme_override_styles/pressed = ExtResource("11_le4xx")
+theme_override_styles/hover = ExtResource("13_a165e")
+text = "BACK"
+
+[node name="OptionsButton" type="Button" parent="." unique_id=1102280297]
+offset_left = 84.0
+offset_top = 76.0
+offset_right = 164.0
+offset_bottom = 107.0
+text = "Opciones"
+
+[node name="TurnLabel" type="Label" parent="." unique_id=1967687287]
+offset_left = 77.0
+offset_top = 267.0
+offset_right = 381.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("19_8qua0")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("11_le4xx")
+
+[node name="RollPanel" type="Panel" parent="." unique_id=643978867]
+visible = false
+offset_left = 616.0
+offset_top = 138.0
+offset_right = 1316.0
+offset_bottom = 938.0
+theme_override_styles/panel = ExtResource("17_xgh3l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RollPanel" unique_id=2066761792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -148.0
+offset_right = 152.54501
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 55
+
+[node name="RollTitle" type="Label" parent="RollPanel/VBoxContainer" unique_id=151822390]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("19_8qua0")
+theme_override_font_sizes/font_size = 36
+text = "SORTEO INICIAL"
+horizontal_alignment = 1
+
+[node name="PlayerRollLabel" type="Label" parent="RollPanel/VBoxContainer" unique_id=100546898]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("20_le4xx")
+text = "Jugador: -"
+horizontal_alignment = 1
+
+[node name="OpponentRollLabel" type="Label" parent="RollPanel/VBoxContainer" unique_id=356058946]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = ExtResource("20_le4xx")
+text = "Rival: -"
+horizontal_alignment = 1
+
+[node name="RollResultLabel" type="Label" parent="RollPanel/VBoxContainer" unique_id=1242479577]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("20_le4xx")
+text = "-"
+horizontal_alignment = 1
+
+[node name="Marcador" type="VBoxContainer" parent="." unique_id=1413495182]
+offset_left = 1795.0
+offset_top = 505.0
+offset_right = 1905.0
+offset_bottom = 555.0
+
+[node name="PlayerKillsLabel" type="Label" parent="Marcador" unique_id=681919197]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("17_xgh3l")
+text = "-"
+
+[node name="OpponentKillsLabel" type="Label" parent="Marcador" unique_id=1549396290]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("17_xgh3l")
+text = "-"
+
+[connection signal="pressed" from="FinTurno" to="BattleManager" method="_on_fin_turno_pressed"]
+[connection signal="pressed" from="FaceUp" to="CardManager" method="_on_face_up_pressed"]
+[connection signal="pressed" from="FaceDown" to="CardManager" method="_on_face_down_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="HowToPlayPanel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]

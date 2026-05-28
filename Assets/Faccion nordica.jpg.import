@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df4glq0nlpv6k"
-path="res://.godot/imported/CardSlot.png-e9d43e4f8ba55be79b6db829726e4a98.ctex"
+uid="uid://fuipmqpq2k34"
+path="res://.godot/imported/Faccion nordica.jpg-e7fecfbe9d6c33ea37227721ca300cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CardSlot.png"
-dest_files=["res://.godot/imported/CardSlot.png-e9d43e4f8ba55be79b6db829726e4a98.ctex"]
+source_file="res://Assets/Faccion nordica.jpg"
+dest_files=["res://.godot/imported/Faccion nordica.jpg-e7fecfbe9d6c33ea37227721ca300cf1.ctex"]
 
 [params]
 

@@ -1,11 +1,8 @@
-[gd_scene format=3 uid="uid://c1nk5quk2dkbl"]
+[gd_scene format=3 uid="uid://dte62udby74yu"]
 
-[ext_resource type="Script" uid="uid://cdbj2rulojunk" path="res://Scripts/card.gd" id="1_rjlel"]
-[ext_resource type="Texture2D" uid="uid://fuipmqpq2k34" path="res://Assets/Faccion nordica.jpg" id="2_iuicq"]
-[ext_resource type="Texture2D" uid="uid://ccbvwkfwxq83" path="res://Assets/Carta.jpg" id="3_iuicq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]
-size = Vector2(209, 323)
+[ext_resource type="Script" uid="uid://bnldt7g7ptw8u" path="res://Scripts/EnemyCard.gd" id="1_eo22f"]
+[ext_resource type="Texture2D" uid="uid://d2fjg26pybw5u" path="res://Assets/Faccion_Griega.jpg" id="3_eo22f"]
+[ext_resource type="Texture2D" uid="uid://rmynf7j4qt6g" path="res://Assets/Faccion_Griega_anverso.jpg" id="3_gd5j8"]
 
 [sub_resource type="Animation" id="Animation_4t34f"]
 resource_name = "Flip"
@@ -189,46 +186,43 @@ _data = {
 
 [node name="Card" type="Node2D" unique_id=904422991]
 z_index = 1
-position = Vector2(168, 837)
-script = ExtResource("1_rjlel")
+position = Vector2(1794, 172)
+script = ExtResource("1_eo22f")
 
 [node name="Back" type="Sprite2D" parent="." unique_id=579908762]
 z_index = -1
-position = Vector2(0.9999981, 0.50001144)
+position = Vector2(3.9999504, 2.0000172)
 scale = Vector2(0.16101694, 0.16204508)
-texture = ExtResource("2_iuicq")
+texture = ExtResource("3_eo22f")
 
 [node name="CardImage" type="Sprite2D" parent="." unique_id=603866680]
+position = Vector2(-1, 0)
 scale = Vector2(0.2318026, 0.25605166)
-texture = ExtResource("3_iuicq")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1108896973]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1964227386]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_rjlel")
+texture = ExtResource("3_gd5j8")
 
 [node name="Ataque" type="RichTextLabel" parent="." unique_id=149239613]
 modulate = Color(0, 0, 0, 0)
 z_index = -1
-offset_left = -68.0
-offset_top = 80.0
-offset_right = -28.0
-offset_bottom = 120.0
-scale = Vector2(2, 2)
-text = "0
-"
-
-[node name="Vida" type="RichTextLabel" parent="." unique_id=1273447267]
-modulate = Color(0, 0, 0, 0)
-z_index = -1
-offset_left = 46.0
+offset_left = -93.0
 offset_top = 81.0
-offset_right = 86.0
+offset_right = -53.0
 offset_bottom = 121.0
 scale = Vector2(2, 2)
 text = "0
 "
+metadata/_edit_use_anchors_ = true
+
+[node name="Vida" type="RichTextLabel" parent="." unique_id=1273447267]
+modulate = Color(0, 0, 0, 0)
+z_index = -1
+offset_left = 22.0
+offset_top = 79.0
+offset_right = 62.0
+offset_bottom = 119.0
+scale = Vector2(2, 2)
+text = "0
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1361970528]
 libraries/ = SubResource("AnimationLibrary_x61kk")
@@ -236,13 +230,11 @@ libraries/ = SubResource("AnimationLibrary_x61kk")
 [node name="Nombre" type="RichTextLabel" parent="." unique_id=1080822408]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
-offset_left = -74.0
-offset_top = -153.0
-offset_right = -5.4049606
-offset_bottom = -113.0
+offset_left = -85.0
+offset_top = -148.0
+offset_right = -16.40496
+offset_bottom = -108.0
 scale = Vector2(2.42, 2.42)
 text = "THOR"
 horizontal_alignment = 1
-
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+metadata/_edit_use_anchors_ = true

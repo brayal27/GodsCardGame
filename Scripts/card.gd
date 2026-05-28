@@ -1,31 +1,66 @@
 extends Node2D
 
-# Señales personalizadas que emitirá la carta
-signal hovered          # Se emite cuando el ratón entra en la carta
-signal hovered_off      # Se emite cuando el ratón sale de la carta
+signal hovered
+signal hovered_off
 
 var starting_position
 
+var is_face_down := false
+var is_on_board := false
 
-# Se ejecuta cuando el nodo entra en la escena por primera vez
+var card_owner := ""
+var current_slot = null
+var attack := 0
+var health := 0
+
+var card_front 
+var card_back
+
+
 func _ready() -> void:
-	# Todas las cartas deben ser hijas de CardManager
-	# Aquí conectamos las señales de esta carta con el manager
 	get_parent().connect_card_signals(self)
+	set_face_up()
 
 
-# Se ejecuta cada frame (no se está usando ahora mismo)
-func _process(delta: float) -> void:
-	pass
+func set_face_up():
+	is_face_down = false
+	
+	card_front = $CardImage
+	card_back = $Back
+	
+	card_front.visible = true
+	card_back.visible = false
+	
+	$Ataque.visible = true
+	$Vida.visible = true
+	$Nombre.visible = true
+	
+	print("Carta boca arriba")
 
 
-# Esta función se llama automáticamente cuando el ratón entra en el Area2D de la carta
+func set_face_down():
+	is_face_down = true
+	
+	card_front = $CardImage
+	card_back = $Back
+	
+	card_front.visible = false
+	card_back.visible = true
+	$Ataque.visible = false
+	$Vida.visible = false
+	$Nombre.visible = false
+	card_back.scale = Vector2(0.23, 0.26)
+	
+	print("Carta boca abajo")
+
+
+func reveal_card():
+	set_face_up()
+
+
 func _on_area_2d_mouse_entered() -> void:
-	# Emitimos la señal "hovered" pasando esta carta como referencia
 	emit_signal("hovered", self)
 
 
-# Esta función se llama cuando el ratón sale del Area2D de la carta
 func _on_area_2d_mouse_exited() -> void:
-	# Emitimos la señal "hovered_off" pasando esta carta
 	emit_signal("hovered_off", self)
