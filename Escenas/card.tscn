@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://cdbj2rulojunk" path="res://Scripts/card.gd" id="1_rjlel"]
 [ext_resource type="Texture2D" uid="uid://fuipmqpq2k34" path="res://Assets/Faccion nordica.jpg" id="2_iuicq"]
 [ext_resource type="Texture2D" uid="uid://ccbvwkfwxq83" path="res://Assets/Carta.jpg" id="3_iuicq"]
+[ext_resource type="FontFile" uid="uid://ch4f7f1i6o3yc" path="res://Fonts/Cinzel/static/Cinzel-Bold.ttf" id="4_ec5o8"]
+[ext_resource type="FontFile" uid="uid://cdkrj1bxvviq7" path="res://Fonts/Cinzel/static/Cinzel-Medium.ttf" id="5_x61kk"]
+[ext_resource type="Texture2D" uid="uid://nxwlkdcwf7n5" path="res://Iconos/espada.png" id="6_mnsgl"]
+[ext_resource type="Texture2D" uid="uid://c4w0xobhiox2x" path="res://Iconos/corazon.png" id="7_ec5o8"]
+[ext_resource type="Texture2D" uid="uid://vo85ybwr6hob" path="res://Characters_Image/Achilles.png" id="8_ec5o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjlel"]
 size = Vector2(209, 323)
@@ -12,7 +17,7 @@ resource_name = "Flip"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ataque:modulate")
+tracks/0/path = NodePath("Might/Ataque:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Vida:modulate")
+tracks/1/path = NodePath("Vida/TextoVida:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -93,13 +98,109 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AbilityContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.15734898, 0.16153736),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Might:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.15750043, 0.16148481),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Might/Espada:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.15750043, 0.16148481),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Vida/Corazon:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.15750043, 0.16148481),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Vida:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.15750043, 0.16148481),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AbilityContainer/AbilityLabel:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.15734898, 0.16153736),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AbilityContainer/AbilityLabel2:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.15734898, 0.16153736),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CharacterImage:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.13210969, 0.16137351),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_m1y0b"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ataque:modulate")
+tracks/0/path = NodePath("Might/Ataque:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -111,7 +212,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Vida:modulate")
+tracks/1/path = NodePath("Vida/TextoVida:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -180,6 +281,102 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AbilityContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Might:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Might/Espada:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Vida/Corazon:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Vida:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AbilityContainer/AbilityLabel:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AbilityContainer/AbilityLabel2:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CharacterImage:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x61kk"]
 _data = {
@@ -192,15 +389,14 @@ z_index = 1
 position = Vector2(168, 837)
 script = ExtResource("1_rjlel")
 
-[node name="Back" type="Sprite2D" parent="." unique_id=579908762]
-z_index = -1
-position = Vector2(0.9999981, 0.50001144)
-scale = Vector2(0.16101694, 0.16204508)
-texture = ExtResource("2_iuicq")
-
 [node name="CardImage" type="Sprite2D" parent="." unique_id=603866680]
 scale = Vector2(0.2318026, 0.25605166)
 texture = ExtResource("3_iuicq")
+
+[node name="CharacterImage" type="Sprite2D" parent="." unique_id=334705234]
+position = Vector2(4.648, -30.901)
+scale = Vector2(0.442204, 0.4422041)
+texture = ExtResource("8_ec5o8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1108896973]
 
@@ -208,41 +404,95 @@ texture = ExtResource("3_iuicq")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_rjlel")
 
-[node name="Ataque" type="RichTextLabel" parent="." unique_id=149239613]
-modulate = Color(0, 0, 0, 0)
-z_index = -1
-offset_left = -68.0
-offset_top = 80.0
-offset_right = -28.0
-offset_bottom = 120.0
-scale = Vector2(2, 2)
-text = "0
-"
-
-[node name="Vida" type="RichTextLabel" parent="." unique_id=1273447267]
-modulate = Color(0, 0, 0, 0)
-z_index = -1
-offset_left = 46.0
-offset_top = 81.0
-offset_right = 86.0
-offset_bottom = 121.0
-scale = Vector2(2, 2)
-text = "0
-"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1361970528]
 libraries/ = SubResource("AnimationLibrary_x61kk")
 
 [node name="Nombre" type="RichTextLabel" parent="." unique_id=1080822408]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
-offset_left = -74.0
-offset_top = -153.0
-offset_right = -5.4049606
-offset_bottom = -113.0
+offset_left = -104.0
+offset_top = -161.0
+offset_right = -17.223145
+offset_bottom = -135.7934
 scale = Vector2(2.42, 2.42)
-text = "THOR"
+theme_override_fonts/normal_font = ExtResource("4_ec5o8")
+theme_override_font_sizes/normal_font_size = 12
 horizontal_alignment = 1
+
+[node name="Might" type="ColorRect" parent="." unique_id=1814519092]
+z_index = -1
+offset_left = -103.0
+offset_top = 38.0
+offset_right = -20.0
+offset_bottom = 82.0
+color = Color(0.60784316, 0.47843137, 0.18431373, 1)
+
+[node name="Ataque" type="RichTextLabel" parent="Might" unique_id=149239613]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 32.0
+offset_right = 57.5
+offset_bottom = 21.5
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("5_x61kk")
+theme_override_font_sizes/normal_font_size = 14
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Espada" type="Sprite2D" parent="Might" unique_id=421431617]
+position = Vector2(19, 21)
+rotation = 0.46949357
+scale = Vector2(0.019280806, 0.019280806)
+texture = ExtResource("6_mnsgl")
+
+[node name="Vida" type="ColorRect" parent="." unique_id=310251905]
+z_index = -1
+offset_left = 22.0
+offset_top = 38.0
+offset_right = 105.0
+offset_bottom = 82.0
+color = Color(0.60784316, 0.47843137, 0.18431373, 1)
+
+[node name="TextoVida" type="RichTextLabel" parent="Vida" unique_id=1273447267]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_right = 22.5
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("5_x61kk")
+theme_override_font_sizes/normal_font_size = 14
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Corazon" type="Sprite2D" parent="Vida" unique_id=793267228]
+position = Vector2(62, 21)
+scale = Vector2(0.045454547, 0.045454547)
+texture = ExtResource("7_ec5o8")
+
+[node name="AbilityContainer" type="VBoxContainer" parent="." unique_id=854617007]
+offset_left = -103.0
+offset_top = 87.0
+offset_right = 105.0
+offset_bottom = 162.0
+theme_override_constants/separation = 6
+
+[node name="AbilityLabel" type="Label" parent="AbilityContainer" unique_id=604131110]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_x61kk")
+
+[node name="AbilityLabel2" type="Label" parent="AbilityContainer" unique_id=162604869]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_x61kk")
+
+[node name="Back" type="Sprite2D" parent="." unique_id=579908762]
+z_index = -1
+position = Vector2(2.9999847, 1.000061)
+scale = Vector2(0.16101694, 0.16204508)
+texture = ExtResource("2_iuicq")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

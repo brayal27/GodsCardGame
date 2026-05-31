@@ -204,6 +204,9 @@ theme_override_styles/pressed = ExtResource("5_al1sl")
 theme_override_styles/hover = ExtResource("7_ndbmv")
 text = "BACK"
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1954956644]
+volume_db = -12.0
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HowToButton" to="." method="_on_how_to_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

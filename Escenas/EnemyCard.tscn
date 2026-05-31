@@ -3,92 +3,169 @@
 [ext_resource type="Script" uid="uid://bnldt7g7ptw8u" path="res://Scripts/EnemyCard.gd" id="1_eo22f"]
 [ext_resource type="Texture2D" uid="uid://d2fjg26pybw5u" path="res://Assets/Faccion_Griega.jpg" id="3_eo22f"]
 [ext_resource type="Texture2D" uid="uid://rmynf7j4qt6g" path="res://Assets/Faccion_Griega_anverso.jpg" id="3_gd5j8"]
+[ext_resource type="FontFile" uid="uid://ch4f7f1i6o3yc" path="res://Fonts/Cinzel/static/Cinzel-Bold.ttf" id="4_747xi"]
+[ext_resource type="FontFile" uid="uid://cdkrj1bxvviq7" path="res://Fonts/Cinzel/static/Cinzel-Medium.ttf" id="5_747xi"]
+[ext_resource type="Texture2D" uid="uid://c4w0xobhiox2x" path="res://Iconos/corazon.png" id="6_41tww"]
+[ext_resource type="Texture2D" uid="uid://nxwlkdcwf7n5" path="res://Iconos/espada.png" id="7_grtl7"]
+[ext_resource type="Texture2D" uid="uid://b6ktd753ybloy" path="res://Characters_Image/Angrboda.png" id="8_747xi"]
 
 [sub_resource type="Animation" id="Animation_4t34f"]
 resource_name = "Flip"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ataque:modulate")
+tracks/0/path = NodePath("Back:z_index")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13242315, 0.16000795, 0.1612107),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Vida:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.13242315, 0.16000795, 0.1612107),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Back:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, -1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.16101694, 0.16204508), Vector2(0.05, 0.162), Vector2(0.162, 0.162)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardImage:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Back:scale")
+tracks/3/path = NodePath("CardImage:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.16101694, 0.16204508), Vector2(0.05, 0.162), Vector2(0.162, 0.162)]
+"values": [Vector2(0.2318026, 0.25605166), Vector2(0.05, 0.256), Vector2(0.2322357, 0.256)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CardImage:z_index")
+tracks/4/path = NodePath("Nombre:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CardImage:scale")
+tracks/5/path = NodePath("Vida:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.2318026, 0.25605166), Vector2(0.05, 0.256), Vector2(0.2322357, 0.256)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Nombre:modulate")
+tracks/6/path = NodePath("Vida/TextoVida:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.13333334, 0.1612107),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Vida/Corazon:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Might:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Might/Ataque:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Might/Espada:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AbilityContainer:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.15963411, 0.20041195),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CharacterImage:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.20039195),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_m1y0b"]
@@ -96,86 +173,158 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ataque:modulate")
+tracks/0/path = NodePath("Back:z_index")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [-1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Vida:modulate")
+tracks/1/path = NodePath("Back:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Vector2(0.16101694, 0.16204508)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Back:z_index")
+tracks/2/path = NodePath("CardImage:z_index")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1]
+"update": 1,
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Back:scale")
+tracks/3/path = NodePath("CardImage:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.16101694, 0.16204508)]
+"values": [Vector2(0.2318026, 0.25605166)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CardImage:z_index")
+tracks/4/path = NodePath("Nombre:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CardImage:scale")
+tracks/5/path = NodePath("Vida:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2318026, 0.25605166)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Nombre:modulate")
+tracks/6/path = NodePath("Vida/TextoVida:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Vida/Corazon:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Might:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Might/Ataque:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Might/Espada:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AbilityContainer:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CharacterImage:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x61kk"]
@@ -189,52 +338,108 @@ z_index = 1
 position = Vector2(1794, 172)
 script = ExtResource("1_eo22f")
 
-[node name="Back" type="Sprite2D" parent="." unique_id=579908762]
-z_index = -1
-position = Vector2(3.9999504, 2.0000172)
-scale = Vector2(0.16101694, 0.16204508)
-texture = ExtResource("3_eo22f")
-
 [node name="CardImage" type="Sprite2D" parent="." unique_id=603866680]
 position = Vector2(-1, 0)
 scale = Vector2(0.2318026, 0.25605166)
 texture = ExtResource("3_gd5j8")
 
-[node name="Ataque" type="RichTextLabel" parent="." unique_id=149239613]
-modulate = Color(0, 0, 0, 0)
-z_index = -1
-offset_left = -93.0
-offset_top = 81.0
-offset_right = -53.0
-offset_bottom = 121.0
-scale = Vector2(2, 2)
-text = "0
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Vida" type="RichTextLabel" parent="." unique_id=1273447267]
-modulate = Color(0, 0, 0, 0)
-z_index = -1
-offset_left = 22.0
-offset_top = 79.0
-offset_right = 62.0
-offset_bottom = 119.0
-scale = Vector2(2, 2)
-text = "0
-"
-metadata/_edit_use_anchors_ = true
+[node name="CharacterImage" type="Sprite2D" parent="." unique_id=1573880643]
+z_index = 1
+position = Vector2(10, -38)
+scale = Vector2(0.39932883, 0.39932883)
+texture = ExtResource("8_747xi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1361970528]
 libraries/ = SubResource("AnimationLibrary_x61kk")
 
-[node name="Nombre" type="RichTextLabel" parent="." unique_id=1080822408]
+[node name="Nombre" type="RichTextLabel" parent="." unique_id=94190078]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
-offset_left = -85.0
-offset_top = -148.0
-offset_right = -16.40496
-offset_bottom = -108.0
+offset_left = -105.00004
+offset_top = -160.0
+offset_right = -18.63639
+offset_bottom = -132.72728
 scale = Vector2(2.42, 2.42)
-text = "THOR"
+theme_override_fonts/normal_font = ExtResource("4_747xi")
+theme_override_font_sizes/normal_font_size = 12
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Might" type="ColorRect" parent="." unique_id=139408415]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+offset_left = -96.0
+offset_top = 25.0
+offset_right = -13.0
+offset_bottom = 69.0
+color = Color(0.60784316, 0.47843137, 0.18431373, 1)
+
+[node name="Ataque" type="RichTextLabel" parent="Might" unique_id=1834590913]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 32.0
+offset_right = 57.5
+offset_bottom = 21.5
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("5_747xi")
+theme_override_font_sizes/normal_font_size = 14
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Espada" type="Sprite2D" parent="Might" unique_id=407205536]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(19, 21)
+rotation = 0.46949357
+scale = Vector2(0.019280806, 0.019280806)
+texture = ExtResource("7_grtl7")
+
+[node name="Vida" type="ColorRect" parent="." unique_id=1905013726]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 95.0
+offset_bottom = 69.0
+color = Color(0.60784316, 0.47843137, 0.18431373, 1)
+
+[node name="TextoVida" type="RichTextLabel" parent="Vida" unique_id=260512410]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_right = 22.5
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("5_747xi")
+theme_override_font_sizes/normal_font_size = 14
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Corazon" type="Sprite2D" parent="Vida" unique_id=1915922973]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(62, 21)
+scale = Vector2(0.045454547, 0.045454547)
+texture = ExtResource("6_41tww")
+
+[node name="AbilityContainer" type="VBoxContainer" parent="." unique_id=1353302424]
+modulate = Color(1, 1, 1, 0)
+offset_left = -97.0
+offset_top = 73.0
+offset_right = 95.0
+offset_bottom = 148.0
+theme_override_constants/separation = 6
+
+[node name="AbilityLabel" type="Label" parent="AbilityContainer" unique_id=286447958]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_747xi")
+
+[node name="AbilityLabel2" type="Label" parent="AbilityContainer" unique_id=488114942]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_747xi")
+
+[node name="Back" type="Sprite2D" parent="." unique_id=579908762]
+z_index = -1
+position = Vector2(4, 2.0000153)
+scale = Vector2(0.16101694, 0.16204508)
+texture = ExtResource("3_eo22f")

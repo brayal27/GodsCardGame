@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dgkx6kyl5jvkm"]
 
 [ext_resource type="Script" uid="uid://ds4kctfaj4run" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://buopnm2fg845a" path="res://Scripts/Main.gd" id="1_h1sxn"]
 [ext_resource type="Script" uid="uid://bmspv77icapeq" path="res://Scripts/AbilityManager.gd" id="1_le4xx"]
 [ext_resource type="Texture2D" uid="uid://bsuhum7u8rgq5" path="res://Assets/Tapete.jpg" id="2_ktoa8"]
 [ext_resource type="PackedScene" uid="uid://jxpw5apoafi1" path="res://Escenas/card_slot.tscn" id="3_h2yge"]
@@ -21,17 +20,14 @@
 [ext_resource type="FontFile" uid="uid://ch4f7f1i6o3yc" path="res://Fonts/Cinzel/static/Cinzel-Bold.ttf" id="18_eyox0"]
 [ext_resource type="FontFile" uid="uid://bueqwfi5yclcp" path="res://Fonts/Cinzel/static/Cinzel-SemiBold.ttf" id="19_8qua0"]
 [ext_resource type="StyleBox" uid="uid://d3n5vr4e26t41" path="res://MainMenuButtons.tres" id="20_le4xx"]
-[ext_resource type="Script" uid="uid://q2aqn5nr5yiv" path="res://Scripts/GraveyardManager.gd" id="21_ipmsd"]
-[ext_resource type="Script" uid="uid://ced4foy87jmay" path="res://Scripts/TurnManager.gd" id="22_xgh3l"]
-[ext_resource type="Script" uid="uid://8cgssbt2q7kt" path="res://Scripts/Opponent_IA.gd" id="23_eyox0"]
-[ext_resource type="Script" uid="uid://b4flksxd8kak3" path="res://Scripts/CombatManager.gd" id="24_eyox0"]
-[ext_resource type="Script" uid="uid://cyypckujn0snj" path="res://Scripts/MovementManager.gd" id="25_8qua0"]
+
+[sub_resource type="GDScript" id="GDScript_le4xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1md0r"]
 size = Vector2(141, 198)
 
-[node name="Main" type="Node2D" unique_id=1998233136]
-script = ExtResource("1_h1sxn")
+[node name="main" type="Node2D" unique_id=1998233136]
+script = SubResource("GDScript_le4xx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=544240448]
 z_index = -6
@@ -144,11 +140,9 @@ script = ExtResource("4_1bvp3")
 script = ExtResource("1_0xm2m")
 
 [node name="PlayerHand" type="Node2D" parent="." unique_id=1666294451]
-z_index = 200
 script = ExtResource("4_lquwl")
 
 [node name="EnemyHand" type="Node2D" parent="." unique_id=1010727568]
-z_index = 200
 script = ExtResource("7_b1m0k")
 
 [node name="Deck" type="Node2D" parent="." unique_id=1830307718]
@@ -186,7 +180,7 @@ offset_bottom = 564.0
 theme_override_styles/normal = ExtResource("11_le4xx")
 theme_override_styles/pressed = ExtResource("12_ipmsd")
 theme_override_styles/hover = ExtResource("13_a165e")
-text = "LISTO"
+text = "FIN TURNO"
 
 [node name="BattleManager" type="Node" parent="." unique_id=287491874]
 script = ExtResource("9_n3qho")
@@ -216,20 +210,20 @@ texture = ExtResource("10_l8mww")
 [node name="BattleTimer" type="Timer" parent="." unique_id=321798717]
 
 [node name="FaceUp" type="Button" parent="." unique_id=283632675]
-offset_left = 1550.0
-offset_top = 829.0
-offset_right = 1696.0
-offset_bottom = 872.0
+offset_left = 1737.0
+offset_top = 931.0
+offset_right = 1883.0
+offset_bottom = 974.0
 theme_override_styles/normal = ExtResource("11_le4xx")
 theme_override_styles/pressed = ExtResource("12_ipmsd")
 theme_override_styles/hover = ExtResource("13_a165e")
 text = "BOCA ARRIBA"
 
 [node name="FaceDown" type="Button" parent="." unique_id=100103573]
-offset_left = 1550.0
-offset_top = 882.0
-offset_right = 1696.0
-offset_bottom = 925.0
+offset_left = 1737.0
+offset_top = 984.0
+offset_right = 1883.0
+offset_bottom = 1027.0
 theme_override_styles/normal = ExtResource("11_le4xx")
 theme_override_styles/pressed = ExtResource("12_ipmsd")
 theme_override_styles/hover = ExtResource("13_a165e")
@@ -237,7 +231,6 @@ text = "BOCA ABAJO"
 
 [node name="Options" type="Panel" parent="." unique_id=1385860975]
 visible = false
-z_index = 300
 offset_left = 617.0
 offset_top = 138.0
 offset_right = 1317.0
@@ -294,7 +287,6 @@ text = "Salir al escritorio"
 
 [node name="HowToPlayPanel" type="Panel" parent="." unique_id=1127955015]
 visible = false
-z_index = 500
 offset_left = 321.0
 offset_top = 145.0
 offset_right = 1611.0
@@ -321,27 +313,23 @@ offset_bottom = 721.0
 bbcode_enabled = true
 text = "[b][font_size=20]Objetivo[/font_size][/b]
 
-Este es un juego de estrategia por turnos donde los jugadores colocan cartas en el mapa para preparar ataques, defensas, trampas y duelos.
+Este es un juego de estrategia por turnos donde los jugadores colocan cartas en el mapa para preparar ataques, trampas y duelos.
 
-El objetivo es derrotar [b]7 cartas del rival[/b]. El primer jugador que consiga eliminar 7 cartas enemigas gana la partida.
+El objetivo es derrotar [b]7 cartas del rival[/b]. El primer jugador que lo consiga gana la partida.
 
 [b][font_size=20]Inicio de la partida[/font_size][/b]
 
-Al empezar, se realiza un sorteo inicial para decidir qué jugador comienza.
+Al empezar, se realiza un sorteo para decidir qué jugador comienza.
 
 Después, cada jugador roba cartas hasta tener [b]4 cartas en la mano[/b].
 
-Cada carta pertenece a una facción y tiene sus propios valores de [b]ataque[/b], [b]vida[/b] y, en algunos casos, [b]habilidades especiales[/b].
 
 [b][font_size=20]Primeros turnos[/font_size][/b]
 
 Hasta el [b]cuarto turno[/b], no se pueden iniciar combates.
 
-Durante esta fase, los jugadores solo pueden preparar el campo de batalla colocando cartas en slots libres del mapa.
+Durante esta fase, los jugadores solo pueden colocar cartas en slots libres del mapa. Las cartas pueden jugarse boca arriba o boca abajo.
 
-Las cartas pueden jugarse [b]boca arriba[/b] o [b]boca abajo[/b].
-
-Esta fase sirve para construir una estrategia antes de que comiencen las hostilidades.
 
 [b][font_size=20]Turnos de juego[/font_size][/b]
 
@@ -353,25 +341,8 @@ En su turno, cada jugador puede realizar una acción principal:
 
 [b]Revelar una carta boca abajo[/b] que ya esté colocada.
 
-[b]Mover una carta[/b] si la situación lo permite.
+Si una carta revelada está cerca de una carta rival, se inicia un duelo.
 
-[b]Atacar o iniciar un duelo[/b] contra una carta rival cercana.
-
-Cuando el jugador realiza una acción, debe confirmar el final de su turno para que juegue el rival.
-
-[b][font_size=20]Colocar cartas[/font_size][/b]
-
-Las cartas solo pueden colocarse en slots libres del mapa.
-
-No se puede colocar una carta encima de otra.
-
-Colocar bien las cartas es importante, ya que la posición puede influir en los duelos y en algunas habilidades.
-
-[b][font_size=20]Cartas boca arriba[/font_size][/b]
-
-Las cartas boca arriba muestran su identidad, ataque, vida y habilidades.
-
-Son útiles cuando el jugador quiere mostrar fuerza desde el principio o preparar una amenaza visible en el tablero.
 
 [b][font_size=20]Cartas boca abajo[/font_size][/b]
 
@@ -379,64 +350,36 @@ Las cartas boca abajo permanecen ocultas para el rival.
 
 Sirven para preparar estrategias, esconder habilidades y sorprender al enemigo cuando empieza un duelo.
 
-Si una carta boca abajo participa en un combate, se revela automáticamente antes de resolver el duelo.
 
 [b][font_size=20]Duelos[/font_size][/b]
 
 Un duelo ocurre cuando una carta se enfrenta a una carta rival cercana.
 
-Al comenzar el duelo, las cartas implicadas se revelan si estaban boca abajo.
+Al comenzar el duelo, las cartas implicadas se revelan si estaban boca abajo. Después se comparan sus valores de combate y se aplican sus habilidades.
 
-Después se comparan sus valores de combate y se aplican las habilidades correspondientes.
-
-El ataque de una carta se enfrenta a la vida de la carta rival. Si el daño es suficiente, la carta enemiga es derrotada.
-
-En algunos casos, ambas cartas pueden derrotarse mutuamente si las dos tienen suficiente ataque para eliminar a la otra.
 
 [b][font_size=20]Habilidades[/font_size][/b]
 
-Algunas cartas tienen habilidades especiales que modifican su comportamiento en el tablero o durante los duelos.
+Algunas cartas tienen habilidades especiales, como:
 
-Algunas habilidades pueden depender de la posición de la carta, del turno, de si tiene aliados cerca o de si está aislada.
+[b]Blindaje[/b]: reduce daño.  
+[b]Veneno[/b]: debilita al rival.  
+[b]Apoyo[/b]: ayuda a cartas aliadas cercanas.  
+[b]Agilidad[/b]: da ventaja en combate.  
+[b]Prisa[/b]: permite actuar antes.  
+[b]Frenesí[/b]: aumenta el poder ofensivo.
 
-Ejemplos de habilidades:
 
-[b]Apoyo[/b]: ayuda a cartas aliadas cercanas.
-[b]Ofensivo[/b]: mejora la carta durante tu turno.
-[b]Defensivo[/b]: mejora la carta durante el turno rival.
-[b]Centro, lateral o esquina[/b]: mejoran la carta según su posición en el mapa.
+[b][font_size=20]Ganar un duelo[/font_size][/b]
 
-[b][font_size=20]Cartas derrotadas[/font_size][/b]
+Para resolver un duelo, se revelan las cartas, se calculan sus valores, se aplican habilidades y se compara el resultado.
 
-Cuando una carta es derrotada, se retira del tablero y va al cementerio de su jugador.
+La carta perdedora es derrotada y se retira del tablero.
 
-Cada carta enemiga derrotada aumenta el marcador de victoria.
-
-Puedes ver el progreso de la partida en el marcador:
-
-[b]Jugador: 0/7[/b]
-[b]Rival: 0/7[/b]
-
-[b][font_size=20]Consejos de estrategia[/font_size][/b]
-
-No coloques todas tus cartas sin pensar: la posición en el mapa puede decidir un duelo.
-
-Usa las cartas boca abajo para engañar al rival y preparar sorpresas.
-
-Protege tus cartas importantes y evita dejarlas expuestas.
-
-Observa las cartas enemigas cercanas antes de revelar o atacar.
-
-A veces es mejor preparar el tablero que atacar inmediatamente.
 
 [b][font_size=20]Victoria[/font_size][/b]
 
-Gana el primer jugador que consiga derrotar [b]7 cartas enemigas[/b].
-
-Si tu marcador llega a [b]7/7[/b], ganas la partida.
-
-Si el rival derrota 7 de tus cartas antes, pierdes.
-"
+Gana el primer jugador que consiga derrotar [b]7 cartas enemigas[/b]."
 
 [node name="BackButton" type="Button" parent="HowToPlayPanel" unique_id=1848837978]
 layout_mode = 0
@@ -451,10 +394,17 @@ theme_override_styles/pressed = ExtResource("11_le4xx")
 theme_override_styles/hover = ExtResource("13_a165e")
 text = "BACK"
 
+[node name="OptionsButton" type="Button" parent="." unique_id=1102280297]
+offset_left = 84.0
+offset_top = 76.0
+offset_right = 164.0
+offset_bottom = 107.0
+text = "Opciones"
+
 [node name="TurnLabel" type="Label" parent="." unique_id=1967687287]
-offset_left = 225.0
+offset_left = 250.0
 offset_top = 513.0
-offset_right = 395.0
+offset_right = 420.0
 offset_bottom = 566.0
 theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
 theme_override_fonts/font = ExtResource("19_8qua0")
@@ -511,40 +461,11 @@ theme_override_styles/normal = ExtResource("20_le4xx")
 text = "-"
 horizontal_alignment = 1
 
-[node name="FactionSelect" type="Label" parent="RollPanel/VBoxContainer" unique_id=1111076327]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9607843, 0.84313726, 0.43137255, 1)
-theme_override_fonts/font = ExtResource("19_8qua0")
-theme_override_font_sizes/font_size = 36
-text = "ELIGE FACCIÓN"
-horizontal_alignment = 1
-
-[node name="FactionPanel" type="HBoxContainer" parent="RollPanel/VBoxContainer" unique_id=1240052247]
-visible = false
-layout_mode = 2
-theme_override_constants/separation = 133
-
-[node name="NordicButton" type="Button" parent="RollPanel/VBoxContainer/FactionPanel" unique_id=534085206]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("11_le4xx")
-theme_override_styles/pressed = ExtResource("12_ipmsd")
-theme_override_styles/hover = ExtResource("13_a165e")
-text = "FACCIÓN
-NÓRDICA"
-
-[node name="GreekButton" type="Button" parent="RollPanel/VBoxContainer/FactionPanel" unique_id=1357140248]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("11_le4xx")
-theme_override_styles/pressed = ExtResource("12_ipmsd")
-theme_override_styles/hover = ExtResource("13_a165e")
-text = "FACCIÓN
-GRIEGA"
-
 [node name="Marcador" type="VBoxContainer" parent="." unique_id=1413495182]
-offset_left = 238.0
-offset_top = 586.0
-offset_right = 348.0
-offset_bottom = 648.0
+offset_left = 1795.0
+offset_top = 505.0
+offset_right = 1905.0
+offset_bottom = 555.0
 
 [node name="PlayerKillsLabel" type="Label" parent="Marcador" unique_id=681919197]
 layout_mode = 2
@@ -558,19 +479,18 @@ text = "-"
 
 [node name="OpponentGraveyard" parent="." unique_id=67892324 instance=ExtResource("3_h2yge")]
 z_index = -4
-position = Vector2(316, 398)
+position = Vector2(193.00002, 302)
 scale = Vector2(0.625, 0.625)
 script = ExtResource("4_1bvp3")
 
 [node name="PlayerGraveyard" parent="." unique_id=1978880677 instance=ExtResource("3_h2yge")]
 z_index = -4
-position = Vector2(1599, 679)
+position = Vector2(1726, 775)
 scale = Vector2(0.625, 0.625)
 script = ExtResource("4_1bvp3")
 
 [node name="EndGame" type="Panel" parent="." unique_id=1138197667]
 visible = false
-z_index = 500
 offset_left = 617.0
 offset_top = 138.0
 offset_right = 1317.0
@@ -629,31 +549,6 @@ text = "Salir al escritorio"
 [node name="AbilityManager" type="Node" parent="." unique_id=1645535814]
 script = ExtResource("1_le4xx")
 
-[node name="GraveyardManager" type="Node" parent="." unique_id=952853056]
-script = ExtResource("21_ipmsd")
-
-[node name="TurnManager" type="Node" parent="." unique_id=116781615]
-script = ExtResource("22_xgh3l")
-
-[node name="OpponentIA" type="Node" parent="." unique_id=2019952999]
-script = ExtResource("23_eyox0")
-
-[node name="CombatManager" type="Node" parent="." unique_id=5502091]
-script = ExtResource("24_eyox0")
-
-[node name="MovementManager" type="Node" parent="." unique_id=1066055014]
-script = ExtResource("25_8qua0")
-
-[node name="OptionsButton" type="Button" parent="." unique_id=587209914]
-offset_left = 68.0
-offset_top = 59.0
-offset_right = 189.0
-offset_bottom = 102.0
-theme_override_styles/normal = ExtResource("11_le4xx")
-theme_override_styles/pressed = ExtResource("12_ipmsd")
-theme_override_styles/hover = ExtResource("13_a165e")
-text = "OPCIONES"
-
 [connection signal="pressed" from="FinTurno" to="BattleManager" method="_on_fin_turno_pressed"]
 [connection signal="pressed" from="FaceUp" to="CardManager" method="_on_face_up_pressed"]
 [connection signal="pressed" from="FaceDown" to="CardManager" method="_on_face_down_pressed"]
@@ -662,7 +557,7 @@ text = "OPCIONES"
 [connection signal="pressed" from="Options/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="HowToPlayPanel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="EndGame/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="EndGame/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="EndGame/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
