@@ -11,7 +11,7 @@ var card_being_dragged
 var is_hovering_on_card := false
 var player_hand_reference
 var colocar_boca_abajo := false
-
+var current_hovered_card = null
 
 # Se ejecuta al iniciar la escena
 func _ready() -> void:
@@ -28,7 +28,28 @@ func _process(_delta: float) -> void:
 			clamp(mouse_pos.x, 0, screen_size.x),
 			clamp(mouse_pos.y, 0, screen_size.y)
 		)
+	else:
+		update_card_hover()
 
+func update_card_hover() -> void:
+	var card_under_mouse = raycast_check_for_card()
+
+	# Si es la misma carta, no hacemos nada
+	if card_under_mouse == current_hovered_card:
+		return
+
+	# Si había una carta en hover antes, la bajamos
+	if current_hovered_card != null and is_instance_valid(current_hovered_card):
+		highlight_card(current_hovered_card, false)
+
+	current_hovered_card = card_under_mouse
+
+	# Si ahora hay una carta nueva debajo del ratón, la subimos
+	if current_hovered_card != null and is_instance_valid(current_hovered_card):
+		highlight_card(current_hovered_card, true)
+		is_hovering_on_card = true
+	else:
+		is_hovering_on_card = false
 
 func start_drag(card):
 	var battle_manager = $"../BattleManager"
@@ -51,9 +72,18 @@ func start_drag(card):
 		battle_manager.handle_board_card_clicked(card)
 		return
 	
-	# Si está en la mano, se arrastra normalmente.
+	# Si está en la mano, solo se puede arrastrar si el jugador puede jugar carta.
+	if not battle_manager.can_player_play_card():
+		return
+
+	if current_hovered_card != null and is_instance_valid(current_hovered_card):
+		highlight_card(current_hovered_card, false)
+		
+	current_hovered_card = null
+	is_hovering_on_card = false
+
 	card_being_dragged = card
-	card_being_dragged.z_index = 100
+	card_being_dragged.z_index = 200
 	card.scale = Vector2(1, 1)
 
 
@@ -108,6 +138,7 @@ func finish_drag(_card):
 		
 		if has_node("../BattleManager"):
 			$"../BattleManager".empty_slot.erase(card_slot_found)
+			$"../BattleManager".register_player_action("jugar_carta")
 		
 		if card_being_dragged == dragged_card:
 			card_being_dragged = null
@@ -149,27 +180,30 @@ func on_hovered_off_card(card):
 
 
 func highlight_card(card, hovered):
-	# Las cartas que ya están en mesa NO deben subir z_index con hover.
-	# Si suben, pueden tapar otras cartas y romper la selección de objetivo.
+	if card == null:
+		return
+
+	# Cartas colocadas en el tablero: por debajo de la mano
 	if card.is_on_board:
 		card.z_index = 1
 		return
-	
+
 	var tween = get_tree().create_tween()
-	
+
 	if hovered:
-		card.z_index = 2
+		# Carta de la mano en hover: muy por encima del tablero
+		card.z_index = 200
 		
-		var hover_position = card.starting_position + Vector2(0, -290)
+		var hover_position = card.starting_position + Vector2(0, -260)
 		
-		tween.parallel().tween_property(card, "scale", Vector2(1.1, 1.1), 0.1)
+		tween.parallel().tween_property(card, "scale", Vector2(1.15, 1.15), 0.1)
 		tween.parallel().tween_property(card, "position", hover_position, 0.1)
 	else:
-		card.z_index = 1
+		# Carta de la mano normal: por encima del tablero, pero debajo del hover
+		card.z_index = 100
 		
 		tween.parallel().tween_property(card, "scale", Vector2(1, 1), 0.1)
 		tween.parallel().tween_property(card, "position", card.starting_position, 0.1)
-
 
 # Detecta si hay una carta bajo el ratón
 func raycast_check_for_card():

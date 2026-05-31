@@ -1,8 +1,8 @@
 extends Node2D
 
-var card_in_slot := false
+var card_in_slot = false
 var current_card = null
-var slot_owner := ""
+var slot_owner = ""
 
 
 func can_place_card() -> bool:
