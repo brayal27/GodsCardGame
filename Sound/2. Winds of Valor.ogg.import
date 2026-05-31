@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2xfwiof35cbd"
+path="res://.godot/imported/2. Winds of Valor.ogg-79d8c93f3f6f5bf18c78f767d99f7f20.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/2. Winds of Valor.ogg"
+dest_files=["res://.godot/imported/2. Winds of Valor.ogg-79d8c93f3f6f5bf18c78f767d99f7f20.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
